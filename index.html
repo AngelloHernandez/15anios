@@ -43,15 +43,25 @@
       border: 1px solid #ffffff3d; border-radius: 50%; content: ""; pointer-events: none; transform: translateY(-50%);
     }
     .hero::after { right: 6%; width: min(46vw,590px); border-color: #d7bd8159; }
-    .hero-inner { position: relative; z-index: 1; display: grid; width: min(1120px,100%); margin: auto; grid-template-columns: 1.05fr .95fr; align-items: center; gap: clamp(32px,8vw,100px); }
-    .intro { text-align: left; }
+    .hero-inner { position: relative; z-index: 1; display: grid; width: min(1120px,100%); min-width: 0; margin: auto; grid-template-columns: minmax(0,1.05fr) minmax(0,.95fr); align-items: center; gap: clamp(32px,8vw,100px); }
+    .intro { min-width: 0; text-align: left; }
+    .hero h1 { min-width: 0; }
     .hero .eyebrow { margin: 0 0 15px; color: var(--green-dark); font-size: .68rem; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; }
     .hero h1 { margin: 0; color: var(--green-dark); font: 500 clamp(2.7rem,6.6vw,5.8rem)/1.08 "Cinzel",Georgia,serif; letter-spacing: .035em; text-shadow: 0 2px 16px #ffffff91; }
     .hero h1 small { display: block; margin-bottom: 2px; color: var(--green-dark); font: 500 clamp(1.15rem,2vw,1.5rem) "Cinzel",Georgia,serif; letter-spacing: .24em; text-transform: uppercase; }
     .hero-age-row { display: flex; align-items: baseline; gap: .12em; margin: 0 0 6px -8px; }
     .hero-age { color: #d7a93e; font: 600 clamp(8rem,18vw,13rem)/.83 "Cinzel",Georgia,serif; letter-spacing: -.09em; text-shadow: 0 2px #fff3bd,0 8px 0 #9b6e2d,0 14px 28px #17352b42; }
     .hero-age-suffix { color: var(--green-dark); font: italic 500 clamp(1.2rem,2.4vw,1.8rem) "Playfair Display",Georgia,serif; letter-spacing: .02em; }
-    .hero-name { display: block; margin: 0 0 -3px; color: var(--green-dark); font: 400 clamp(4.5rem,10vw,8.2rem)/1.05 "Great Vibes","Playfair Display",cursive; letter-spacing: 0; text-shadow: 0 2px 15px #ffffffbd; }
+    .hero-name { display: block; width: 100%; margin: 0 0 -3px; color: var(--green-dark); font: 400 clamp(4.5rem,10vw,8.2rem)/1.05 "Great Vibes","Playfair Display",cursive; letter-spacing: 0; text-shadow: 0 2px 15px #ffffffbd; }
+    .hero-name-accessible { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; clip-path: inset(50%); }
+    .hero-name-window { display: block; width: 100%; min-width: 0; overflow: hidden; }
+    .hero-name-track { display: flex; width: max-content; gap: clamp(2rem,8vw,5rem); }
+    .hero-name-copy { display: block; flex: none; white-space: nowrap; }
+    .hero-name-track.is-static { width: 100%; justify-content: center; }
+    .hero-name-track.is-static .hero-name-copy + .hero-name-copy { display: none; }
+    .hero-name-track.is-scrolling { animation: hero-name-scroll var(--name-duration) linear infinite; }
+    .hero-name-window:hover .hero-name-track.is-scrolling { animation-play-state: paused; }
+    @keyframes hero-name-scroll { to { transform: translateX(var(--name-distance)); } }
     .hero-message { max-width: 440px; margin: 17px 0 0; color: var(--ink); font-size: .98rem; line-height: 1.85; text-shadow: 0 1px 9px #ffffffd9; }
     .hero-date { margin: 26px 0 0; color: var(--green-dark); font-size: .76rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
     .hero-date::before { display: inline-block; width: 30px; height: 1px; margin: 0 12px 4px 0; background: var(--green-dark); content: ""; }
@@ -191,12 +201,13 @@
     body.motion-ready .reveal.is-exiting { opacity: 0; transform: translateY(-18px) scale(.985); }
     @media (max-width:760px) {
       .hero { min-height: auto; padding: 78px 24px 72px; }
-      .hero-inner { grid-template-columns: 1fr; gap: 42px; }
+      .hero-inner { grid-template-columns: minmax(0,1fr); gap: 42px; }
       .intro { text-align: center; }
       .hero-message { margin-right: auto; margin-left: auto; }
       .crown { margin-right: auto; margin-left: auto; }
       .hero-age-row { justify-content: center; margin-left: 0; }
       .hero-age { font-size: clamp(7rem,28vw,10rem); }
+      .hero-name { font-size: 4.5rem; }
       .portrait-wrap { width: min(72vw,330px); }
       .hero::before { top: auto; right: 50%; bottom: 6%; width: min(76vw,380px); transform: translateX(50%); }
       .hero::after { top: auto; right: 50%; bottom: 4%; width: min(84vw,420px); transform: translateX(50%); }
@@ -224,6 +235,9 @@
       body.motion-ready .reveal, body.motion-ready .reveal.is-exiting { opacity: 1; transform: none; transition: none; }
       .card, .button, .calendar-day { transition: none; }
       .butterfly, .crown-orbit { animation: none; }
+      .hero-name-track.is-scrolling { animation: none; }
+      .hero-name-track.is-scrolling .hero-name-copy + .hero-name-copy { display: none; }
+      .hero-name-window { overflow-x: auto; }
     }
   </style>
 </head>
@@ -390,6 +404,70 @@
       });
     }
 
+    function renderHeroName(name) {
+      const nameElement = document.getElementById("birthday-name");
+      nameElement.replaceChildren();
+
+      const accessibleName = document.createElement("span");
+      accessibleName.className = "hero-name-accessible";
+      accessibleName.textContent = text(name);
+
+      const viewport = document.createElement("span");
+      viewport.className = "hero-name-window";
+      viewport.setAttribute("aria-hidden", "true");
+
+      const track = document.createElement("span");
+      track.className = "hero-name-track";
+      [0, 1].forEach(() => {
+        const copy = document.createElement("span");
+        copy.className = "hero-name-copy";
+        copy.textContent = text(name);
+        track.append(copy);
+      });
+
+      viewport.append(track);
+      nameElement.append(accessibleName, viewport);
+      updateHeroNameLayout();
+    }
+
+    function updateHeroNameLayout() {
+      const nameElement = document.getElementById("birthday-name");
+      const viewport = nameElement.querySelector(".hero-name-window");
+      const track = nameElement.querySelector(".hero-name-track");
+      const firstCopy = track?.firstElementChild;
+      if (!viewport || !track || !firstCopy) return;
+
+      nameElement.style.fontSize = "";
+      track.classList.remove("is-scrolling", "is-static");
+      track.style.removeProperty("--name-distance");
+      track.style.removeProperty("--name-duration");
+
+      const isMobile = window.matchMedia("(max-width: 760px)").matches;
+      const availableWidth = viewport.clientWidth;
+
+      if (!isMobile) {
+        const baseSize = parseFloat(getComputedStyle(nameElement).fontSize);
+        const nameWidth = firstCopy.getBoundingClientRect().width;
+        if (nameWidth > availableWidth) {
+          nameElement.style.fontSize = `${Math.max(24, baseSize * availableWidth / nameWidth)}px`;
+        }
+        track.classList.add("is-static");
+        return;
+      }
+
+      const nameWidth = firstCopy.getBoundingClientRect().width;
+      if (nameWidth <= availableWidth) {
+        track.classList.add("is-static");
+        return;
+      }
+
+      const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+      const distance = nameWidth + gap;
+      track.style.setProperty("--name-distance", `${-distance}px`);
+      track.style.setProperty("--name-duration", `${Math.min(55, Math.max(12, distance / 34))}s`);
+      track.classList.add("is-scrolling");
+    }
+
     function formatDate(date, options) {
       return new Intl.DateTimeFormat("es", options).format(date);
     }
@@ -447,7 +525,7 @@
       setText("invite-title", titleParts?.[1] || "Mis");
       setText("birthday-age-highlight", titleParts?.[2] || data.birthday.age);
       setText("birthday-age-suffix", titleParts?.[3] || "años");
-      setText("birthday-name", data.birthday.name);
+      renderHeroName(data.birthday.name);
       setText("birthday-message", data.birthday.message);
       setText("event-date-label", formatDate(eventDate, { weekday: "long", day: "numeric", month: "long", year: "numeric" }));
       setText("portrait-label", `${data.birthday.age} años · ${text(data.birthday.name)}`);
@@ -484,6 +562,8 @@
       startCountdown(eventDate);
       document.body.classList.add("motion-ready");
       observeSections();
+      window.requestAnimationFrame(updateHeroNameLayout);
+      if (document.fonts?.ready) document.fonts.ready.then(updateHeroNameLayout);
     }
 
     function escapeHTML(value) {
@@ -532,6 +612,7 @@
     }
 
     decorateSections();
+    window.addEventListener("resize", updateHeroNameLayout);
 
     fetch("./invitation.json")
       .then((response) => {
