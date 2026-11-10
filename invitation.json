@@ -8,19 +8,19 @@
     "Publica invitation.json junto a index.html en GitHub Pages."
   ],
   "birthday": {
-    "name": "Valentina",
+    "name": "Shaira Valentina Sierra Cachaya",
     "age": 15,
     "title": "Mis 15 años",
-    "eyebrow": "Con mucha ilusión te invito a celebrar",
-    "message": "Un sueño que comienza, una noche mágica y personas especiales para compartirla. ¡Me encantará que estés ahí!",
+    "eyebrow": "Hay sueños que se convierten en momentos inolvidables, y este es uno de ellos.",
+    "message": "Con el corazón lleno de ilusión y alegría, quiero invitarte a ser parte de una noche muy especial, donde los sueños, las emociones y la magia se unirán para celebrar una etapa maravillosa de mi vida.\nSerá una noche llena de momentos únicos, sonrisas y recuerdos que guardaré para siempre.\nY no hay nada más bonito que compartirlos con las personas que hacen especial mi camino.\nTu presencia será el regalo más hermoso y hará que esta noche sea aún más inolvidable.\n¡Me encantará celebrar contigo! ♡",
     "photo": {
-      "src": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=85",
-      "alt": "Retrato de Valentina, la quinceañera"
+      "src": "./assets/shairavalentina.jpeg",
+      "alt": "Retrato de Shaira Valentina, la quinceañera"
     }
   },
   "event": {
-    "date": "2026-11-28",
-    "time": "19:00"
+    "date": "2026-12-19",
+    "time": "18:30"
   },
   "calendar": {
     "message": "Marca en tu calendario este día tan especial. ¡Te espero para compartir una noche inolvidable!"
@@ -30,9 +30,9 @@
   },
   "reception": {
     "intro": "La noche, el lugar y todos los detalles para encontrarnos.",
-    "venue": "Jardín Magnolia",
-    "address": "Av. de las Rosas 123, Ciudad",
-    "mapUrl": "https://maps.google.com/?q=Jard%C3%ADn+Magnolia"
+    "venue": "Club Social",
+    "address": "Dolores Tolima",
+    "mapUrl": "https://maps.app.goo.gl/65nzgQtxXfSkNHpG6"
   },
   "attire": {
     "code": "Formal",
@@ -46,21 +46,21 @@
         "hex": "#FFFFFF"
       }
     ],
-    "note": "Por favor, evita vestir de verde esmeralda o blanco; son los colores reservados para la quinceañera."
+    "note": "Por favor, evita vestir de BLANCO o de cualquier tonalidad de VERDE; son los colores reservados para la quinceañera."
   },
   "parents": {
     "message": "Con mucha alegría, queremos invitarte a celebrar este momento tan especial junto a nuestra hija.",
-    "mother": "María González",
-    "father": "Carlos González"
+    "mother": "Liliana Cachaya Mora",
+    "father": "Diego Fernando Sierra"
   },
   "gift": {
     "message": "Tu compañía es el mejor regalo. Si deseas tener un detalle conmigo, agradeceré mucho tu lluvia de sobres."
   },
   "rsvp": {
-    "whatsapp": "573001234567",
-    "whatsappMessage": "Hola, confirmo mi asistencia a los 15 años de {name}.",
+    "whatsapp": "573172694430",
+    "whatsappMessage": "Hola, confirmo mi asistencia a los 15 años de Shaira Valentina.",
     "message": "Confirma tu asistencia por WhatsApp. ¡Estoy contando los días para celebrar contigo!",
-    "deadline": "2026-11-14",
-    "deadlineMessage": "Por favor, confirma antes del 14 de noviembre de 2026."
+    "deadline": "2026-12-19",
+    "deadlineMessage": "Por favor, confirma antes del 14 de diciembre de 2026."
   }
 }
