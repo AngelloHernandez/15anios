@@ -4,8 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#064d3b">
-  <meta name="description" content="Acompáñame a celebrar mis quince años.">
-  <title>Mis 15 · Invitación</title>
+  <meta name="description" content="Invitación especial a la celebración de mis 15 años">
+  <link rel="canonical" href="https://angellohernandez.github.io/15anios/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://angellohernandez.github.io/15anios/">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:title" content="Shaira Valentina Sierra Cachaya">
+  <meta property="og:description" content="Invitación especial a la celebración de mis 15 años">
+  <meta property="og:image" content="https://angellohernandez.github.io/15anios/assets/shairavalentina.jpeg">
+  <meta property="og:image:secure_url" content="https://angellohernandez.github.io/15anios/assets/shairavalentina.jpeg">
+  <meta property="og:image:width" content="1142">
+  <meta property="og:image:height" content="1280">
+  <meta property="og:image:alt" content="Retrato de Shaira Valentina, la quinceañera">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Shaira Valentina Sierra Cachaya">
+  <meta name="twitter:description" content="Invitación especial a la celebración de mis 15 años">
+  <meta name="twitter:image" content="https://angellohernandez.github.io/15anios/assets/shairavalentina.jpeg">
+  <title>Shaira Valentina Sierra Cachaya</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
@@ -22,6 +37,8 @@
       --paper: #fcfdfb;
       --gold: #d7bd81;
       --line: #dce8df;
+      --hero-name-gap: clamp(16px,5vw,20px);
+      --hero-name-bottom-adjustment: clamp(14px,1vw,18px);
       font-family: "DM Sans", sans-serif;
       font-synthesis: none;
       text-rendering: optimizeLegibility;
@@ -52,9 +69,9 @@
     .hero-age-row { display: flex; align-items: baseline; gap: .12em; margin: 0 0 6px -8px; }
     .hero-age { color: #d7a93e; font: 600 clamp(8rem,18vw,13rem)/.83 "Cinzel",Georgia,serif; letter-spacing: -.09em; text-shadow: 0 2px #fff3bd,0 8px 0 #9b6e2d,0 14px 28px #17352b42; }
     .hero-age-suffix { color: var(--green-dark); font: italic 500 clamp(1.2rem,2.4vw,1.8rem) "Playfair Display",Georgia,serif; letter-spacing: .02em; }
-    .hero-name { display: block; width: 100%; margin: 0 0 -3px; color: var(--green-dark); font: 400 clamp(4.5rem,10vw,8.2rem)/1.05 "Great Vibes","Playfair Display",cursive; letter-spacing: 0; text-shadow: 0 2px 15px #ffffffbd; }
+    .hero-name { display: block; width: 100%; padding: .2em 0 .28em; margin: calc(-.2em + var(--hero-name-gap)) 0 calc(-.28em - 3px + var(--hero-name-gap) - var(--hero-name-bottom-adjustment)); color: var(--green-dark); font: 400 clamp(4.5rem,10vw,8.2rem)/1.2 "Great Vibes","Playfair Display",cursive; letter-spacing: 0; text-shadow: 0 2px 15px #ffffffbd; }
     .hero-name-accessible { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; clip-path: inset(50%); }
-    .hero-name-window { display: block; width: 100%; min-width: 0; overflow: hidden; }
+    .hero-name-window { display: block; width: 100%; min-width: 0; padding: .05em 0 .08em; overflow: hidden; }
     .hero-name-track { display: flex; width: max-content; gap: clamp(2rem,8vw,5rem); }
     .hero-name-copy { display: block; flex: none; white-space: nowrap; }
     .hero-name-track.is-static { width: 100%; justify-content: center; }
@@ -200,6 +217,7 @@
     body.motion-ready .reveal.is-visible { opacity: 1; transform: translateY(0) scale(1); }
     body.motion-ready .reveal.is-exiting { opacity: 0; transform: translateY(-18px) scale(.985); }
     @media (max-width:760px) {
+      :root { --hero-name-bottom-adjustment: 14px; }
       .hero { min-height: auto; padding: 78px 24px 72px; }
       .hero-inner { grid-template-columns: minmax(0,1fr); gap: 42px; }
       .intro { text-align: center; }
@@ -517,8 +535,17 @@
       const eventDate = new Date(`${data.event.date}T${data.event.time}:00`);
       if (Number.isNaN(eventDate.getTime())) throw new Error("La fecha o la hora del evento no tienen un formato válido.");
 
-      document.title = `Mis 15 · ${text(data.birthday.name)}`;
-      document.querySelector('meta[name="description"]').content = text(data.birthday.message);
+      const metaDescription = "Invitación especial a la celebración de mis 15 años";
+      const metaImage = new URL(data.birthday.photo.src, document.baseURI).href;
+      document.title = text(data.birthday.name);
+      document.querySelector('meta[name="description"]').content = metaDescription;
+      document.querySelector('meta[property="og:title"]').content = text(data.birthday.name);
+      document.querySelector('meta[property="og:description"]').content = metaDescription;
+      document.querySelector('meta[property="og:image"]').content = metaImage;
+      document.querySelector('meta[property="og:image:alt"]').content = text(data.birthday.photo.alt);
+      document.querySelector('meta[name="twitter:title"]').content = text(data.birthday.name);
+      document.querySelector('meta[name="twitter:description"]').content = metaDescription;
+      document.querySelector('meta[name="twitter:image"]').content = metaImage;
       setText("invite-eyebrow", data.birthday.eyebrow);
       const title = text(data.birthday.title).trim();
       const titleParts = title.match(/^(.*?)\s*(\d+)\s*(.*?)$/);
