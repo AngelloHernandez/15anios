@@ -22,7 +22,6 @@
       --paper: #fcfdfb;
       --gold: #d7bd81;
       --line: #dce8df;
-      --hero-art: url("./assets/fondomarco.jpeg");
       font-family: "DM Sans", sans-serif;
       font-synthesis: none;
       text-rendering: optimizeLegibility;
@@ -37,11 +36,7 @@
     .hero {
       position: relative; display: grid; min-height: min(940px,100svh); align-items: center; overflow: hidden; isolation: isolate;
       padding: clamp(72px,9vw,112px) 7vw;
-      background-color: #e8eee1;
-      background-image: linear-gradient(110deg,rgba(250,252,247,.88) 0%,rgba(250,252,247,.72) 56%,rgba(250,252,247,.22) 100%),var(--hero-art);
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
+      background: radial-gradient(ellipse at 75% 48%,#e1ece4 0,transparent 42%),linear-gradient(125deg,#fbfaf6,#eff3ed);
     }
     .hero::before, .hero::after {
       position: absolute; top: 50%; right: 8%; width: min(42vw,540px); aspect-ratio: 1;
@@ -54,8 +49,6 @@
     .hero h1 { margin: 0; color: var(--green-dark); font: 500 clamp(2.7rem,6.6vw,5.8rem)/1.08 "Cinzel",Georgia,serif; letter-spacing: .035em; text-shadow: 0 2px 16px #ffffff91; }
     .hero h1 small { display: block; margin-bottom: 2px; color: var(--green-dark); font: 500 clamp(1.15rem,2vw,1.5rem) "Cinzel",Georgia,serif; letter-spacing: .24em; text-transform: uppercase; }
     .hero-age-row { display: flex; align-items: baseline; gap: .12em; margin: 0 0 6px -8px; }
-    .hero-age { color: #f1d27b; font: 600 clamp(8rem,18vw,13rem)/.83 "Cinzel",Georgia,serif; letter-spacing: -.09em; text-shadow: 0 2px #fff3bd,0 8px 0 #9b6e2d,0 14px 28px #002c1d66; }
-    .hero-age-suffix { color: #f8edc8; font: italic 500 clamp(1.2rem,2.4vw,1.8rem) "Playfair Display",Georgia,serif; letter-spacing: .02em; }
     .hero-age { color: #d7a93e; font: 600 clamp(8rem,18vw,13rem)/.83 "Cinzel",Georgia,serif; letter-spacing: -.09em; text-shadow: 0 2px #fff3bd,0 8px 0 #9b6e2d,0 14px 28px #17352b42; }
     .hero-age-suffix { color: var(--green-dark); font: italic 500 clamp(1.2rem,2.4vw,1.8rem) "Playfair Display",Georgia,serif; letter-spacing: .02em; }
     .hero-name { display: block; margin: 0 0 -3px; color: var(--green-dark); font: 400 clamp(4.5rem,10vw,8.2rem)/1.05 "Great Vibes","Playfair Display",cursive; letter-spacing: 0; text-shadow: 0 2px 15px #ffffffbd; }
@@ -91,22 +84,45 @@
     .section { position: relative; isolation: isolate; padding: clamp(75px,10vw,120px) 24px; }
     .section > .inner { position: relative; z-index: 1; }
     .section > .countdown-inner { position: relative; z-index: 1; }
-    .floral-frame { position: absolute; z-index: 0; inset: 14px; border: 1px solid #087a5552; border-radius: 22px; pointer-events: none; }
-    .floral-frame::after {
-      position: absolute; inset: -11px;
-      background-image:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 43c-8 7-14 8-20 8 4-6 7-11 17-13m8-3c7 3 12 7 15 13-7-1-12-2-19-7' fill='none' stroke='%23064d3b' stroke-linecap='round' stroke-width='3'/%3E%3Cellipse cx='18' cy='45' rx='5' ry='9' transform='rotate(-48 18 45)' fill='%233f9a68'/%3E%3Cellipse cx='47' cy='43' rx='5' ry='9' transform='rotate(50 47 43)' fill='%232b8056'/%3E%3Ccircle cx='32' cy='18' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='22' cy='24' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='27' cy='35' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='38' cy='35' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='43' cy='24' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='32' cy='27' r='5' fill='%23d7bd81' stroke='%23064d3b' stroke-width='1.5'/%3E%3C/svg%3E"),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 43c-8 7-14 8-20 8 4-6 7-11 17-13m8-3c7 3 12 7 15 13-7-1-12-2-19-7' fill='none' stroke='%23064d3b' stroke-linecap='round' stroke-width='3'/%3E%3Cellipse cx='18' cy='45' rx='5' ry='9' transform='rotate(-48 18 45)' fill='%233f9a68'/%3E%3Cellipse cx='47' cy='43' rx='5' ry='9' transform='rotate(50 47 43)' fill='%232b8056'/%3E%3Ccircle cx='32' cy='18' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='22' cy='24' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='27' cy='35' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='38' cy='35' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='43' cy='24' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='32' cy='27' r='5' fill='%23d7bd81' stroke='%23064d3b' stroke-width='1.5'/%3E%3C/svg%3E"),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 43c-8 7-14 8-20 8 4-6 7-11 17-13m8-3c7 3 12 7 15 13-7-1-12-2-19-7' fill='none' stroke='%23064d3b' stroke-linecap='round' stroke-width='3'/%3E%3Cellipse cx='18' cy='45' rx='5' ry='9' transform='rotate(-48 18 45)' fill='%233f9a68'/%3E%3Cellipse cx='47' cy='43' rx='5' ry='9' transform='rotate(50 47 43)' fill='%232b8056'/%3E%3Ccircle cx='32' cy='18' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='22' cy='24' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='27' cy='35' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='38' cy='35' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='43' cy='24' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='32' cy='27' r='5' fill='%23d7bd81' stroke='%23064d3b' stroke-width='1.5'/%3E%3C/svg%3E"),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 43c-8 7-14 8-20 8 4-6 7-11 17-13m8-3c7 3 12 7 15 13-7-1-12-2-19-7' fill='none' stroke='%23064d3b' stroke-linecap='round' stroke-width='3'/%3E%3Cellipse cx='18' cy='45' rx='5' ry='9' transform='rotate(-48 18 45)' fill='%233f9a68'/%3E%3Cellipse cx='47' cy='43' rx='5' ry='9' transform='rotate(50 47 43)' fill='%232b8056'/%3E%3Ccircle cx='32' cy='18' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='22' cy='24' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='27' cy='35' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='38' cy='35' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='43' cy='24' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='32' cy='27' r='5' fill='%23d7bd81' stroke='%23064d3b' stroke-width='1.5'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: left top,right top,left bottom,right bottom;
-      background-size: 54px 54px;
-      content: "";
-      filter: drop-shadow(0 2px 3px #064d3b24);
+    .floral-frame {
+      position: absolute;
+      z-index: 5;
+      inset: 0;
+      pointer-events: none;
     }
-    .hero .floral-frame, .countdown-section .floral-frame { border-color: #f1dfaa91; }
-    .hero .floral-frame::after, .countdown-section .floral-frame::after { filter: drop-shadow(0 2px 5px #002c1d80); }
+    .floral-corner {
+      position: absolute;
+      width: clamp(200px, 49vw, 400px);
+      height: auto;
+      object-fit: contain;
+      pointer-events: none;
+    }
+    .floral-corner--top-left { top: 0; left: 0; }
+    .floral-corner--top-right { top: 0; right: 0; }
+    .floral-corner--bottom-left { bottom: 0; left: 0; }
+    .floral-corner--bottom-right { right: 0; bottom: 0; }
+    .floral-corner--top-left,
+    .floral-corner--top-right,
+    .floral-corner--bottom-left,
+    .floral-corner--bottom-right { mask-composite: intersect; }
+    .floral-corner--top-left {
+      mask-image: linear-gradient(to right,#000 0%,#000 58%,transparent 100%),linear-gradient(to bottom,#000 0%,#000 58%,transparent 100%);
+    }
+    .floral-corner--top-right {
+      mask-image: linear-gradient(to left,#000 0%,#000 58%,transparent 100%),linear-gradient(to bottom,#000 0%,#000 58%,transparent 100%);
+    }
+    .floral-corner--bottom-left {
+      mask-image: linear-gradient(to right,#000 0%,#000 58%,transparent 100%),linear-gradient(to top,#000 0%,#000 58%,transparent 100%);
+    }
+    .floral-corner--bottom-right {
+      mask-image: linear-gradient(to left,#000 0%,#000 58%,transparent 100%),linear-gradient(to top,#000 0%,#000 58%,transparent 100%);
+    }
+    @supports not (mask-composite: intersect) {
+      .floral-corner--top-left { mask-image: linear-gradient(to bottom right,#000 35%,transparent 100%); }
+      .floral-corner--top-right { mask-image: linear-gradient(to bottom left,#000 35%,transparent 100%); }
+      .floral-corner--bottom-left { mask-image: linear-gradient(to top right,#000 35%,transparent 100%); }
+      .floral-corner--bottom-right { mask-image: linear-gradient(to top left,#000 35%,transparent 100%); }
+    }
     .inner { width: min(100%,1040px); margin: 0 auto; }
     .heading { margin: 0 auto 44px; text-align: center; }
     .heading h2 { margin: 0; font: 400 clamp(2.4rem,6vw,4rem)/1.1 "Playfair Display",Georgia,serif; }
@@ -175,7 +191,6 @@
     body.motion-ready .reveal.is-exiting { opacity: 0; transform: translateY(-18px) scale(.985); }
     @media (max-width:760px) {
       .hero { min-height: auto; padding: 78px 24px 72px; }
-      .hero { background-position: center center; }
       .hero-inner { grid-template-columns: 1fr; gap: 42px; }
       .intro { text-align: center; }
       .hero-message { margin-right: auto; margin-left: auto; }
@@ -353,6 +368,28 @@
       document.getElementById(id).textContent = text(value);
     };
 
+    function decorateSections() {
+      const corners = [
+        { position: "top-left", file: "sup-izq.png" },
+        { position: "top-right", file: "sup-der.png" },
+        { position: "bottom-left", file: "inf-izq.png" },
+        { position: "bottom-right", file: "inf-der.png" }
+      ];
+
+      document.querySelectorAll(".floral-frame").forEach((frame) => {
+        corners.forEach(({ position, file }) => {
+          const image = document.createElement("img");
+          image.className = `floral-corner floral-corner--${position}`;
+          image.src = `./assets/${file}`;
+          image.alt = "";
+          image.setAttribute("aria-hidden", "true");
+          image.loading = frame.closest(".hero") ? "eager" : "lazy";
+          image.decoding = "async";
+          frame.append(image);
+        });
+      });
+    }
+
     function formatDate(date, options) {
       return new Intl.DateTimeFormat("es", options).format(date);
     }
@@ -493,6 +530,8 @@
         observer.observe(element);
       });
     }
+
+    decorateSections();
 
     fetch("./invitation.json")
       .then((response) => {
