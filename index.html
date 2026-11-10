@@ -22,6 +22,7 @@
       --paper: #fcfdfb;
       --gold: #d7bd81;
       --line: #dce8df;
+      --hero-art: url("./assets/fondomarco.jpeg");
       font-family: "DM Sans", sans-serif;
       font-synthesis: none;
       text-rendering: optimizeLegibility;
@@ -36,7 +37,11 @@
     .hero {
       position: relative; display: grid; min-height: min(940px,100svh); align-items: center; overflow: hidden; isolation: isolate;
       padding: clamp(72px,9vw,112px) 7vw;
-      background: radial-gradient(ellipse at 78% 47%,#13825d 0,transparent 42%),linear-gradient(132deg,#064d3b 0%,#08714f 52%,#0b5a40 100%);
+      background-color: #e8eee1;
+      background-image: linear-gradient(110deg,rgba(250,252,247,.88) 0%,rgba(250,252,247,.72) 56%,rgba(250,252,247,.22) 100%),var(--hero-art);
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
     .hero::before, .hero::after {
       position: absolute; top: 50%; right: 8%; width: min(42vw,540px); aspect-ratio: 1;
@@ -45,19 +50,24 @@
     .hero::after { right: 6%; width: min(46vw,590px); border-color: #d7bd8159; }
     .hero-inner { position: relative; z-index: 1; display: grid; width: min(1120px,100%); margin: auto; grid-template-columns: 1.05fr .95fr; align-items: center; gap: clamp(32px,8vw,100px); }
     .intro { text-align: left; }
-    .hero .eyebrow { margin: 0 0 15px; color: #e8d8a8; font-size: .68rem; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; }
-    .hero h1 { margin: 0; color: var(--white); font: 500 clamp(2.7rem,6.6vw,5.8rem)/1.08 "Cinzel",Georgia,serif; letter-spacing: .035em; text-shadow: 0 5px 25px #002c1d59; }
-    .hero h1 small { display: block; margin-bottom: 9px; color: #f5edda; font: 500 clamp(1.15rem,2vw,1.5rem) "Cinzel",Georgia,serif; letter-spacing: .24em; text-transform: uppercase; }
-    .hero-name { display: block; margin: 0 0 -3px; color: #f0dda7; font: 400 clamp(4.5rem,10vw,8.2rem)/1.05 "Great Vibes","Playfair Display",cursive; letter-spacing: 0; }
-    .hero-message { max-width: 440px; margin: 17px 0 0; color: #eef7f1; font-size: .98rem; line-height: 1.85; }
-    .hero-date { margin: 26px 0 0; color: var(--white); font-size: .76rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
-    .hero-date::before { display: inline-block; width: 30px; height: 1px; margin: 0 12px 4px 0; background: #e8d8a8; content: ""; }
-    .crown { display: block; width: 58px; height: 46px; margin: 0 0 22px; color: #e8d8a8; filter: drop-shadow(0 3px 8px #002c1d45); }
-    .butterfly { position: absolute; z-index: 1; width: 34px; color: #f0dda7; pointer-events: none; filter: drop-shadow(0 3px 8px #002c1d55); animation: butterfly-float 5s ease-in-out infinite; }
+    .hero .eyebrow { margin: 0 0 15px; color: var(--green-dark); font-size: .68rem; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; }
+    .hero h1 { margin: 0; color: var(--green-dark); font: 500 clamp(2.7rem,6.6vw,5.8rem)/1.08 "Cinzel",Georgia,serif; letter-spacing: .035em; text-shadow: 0 2px 16px #ffffff91; }
+    .hero h1 small { display: block; margin-bottom: 2px; color: var(--green-dark); font: 500 clamp(1.15rem,2vw,1.5rem) "Cinzel",Georgia,serif; letter-spacing: .24em; text-transform: uppercase; }
+    .hero-age-row { display: flex; align-items: baseline; gap: .12em; margin: 0 0 6px -8px; }
+    .hero-age { color: #f1d27b; font: 600 clamp(8rem,18vw,13rem)/.83 "Cinzel",Georgia,serif; letter-spacing: -.09em; text-shadow: 0 2px #fff3bd,0 8px 0 #9b6e2d,0 14px 28px #002c1d66; }
+    .hero-age-suffix { color: #f8edc8; font: italic 500 clamp(1.2rem,2.4vw,1.8rem) "Playfair Display",Georgia,serif; letter-spacing: .02em; }
+    .hero-age { color: #d7a93e; font: 600 clamp(8rem,18vw,13rem)/.83 "Cinzel",Georgia,serif; letter-spacing: -.09em; text-shadow: 0 2px #fff3bd,0 8px 0 #9b6e2d,0 14px 28px #17352b42; }
+    .hero-age-suffix { color: var(--green-dark); font: italic 500 clamp(1.2rem,2.4vw,1.8rem) "Playfair Display",Georgia,serif; letter-spacing: .02em; }
+    .hero-name { display: block; margin: 0 0 -3px; color: var(--green-dark); font: 400 clamp(4.5rem,10vw,8.2rem)/1.05 "Great Vibes","Playfair Display",cursive; letter-spacing: 0; text-shadow: 0 2px 15px #ffffffbd; }
+    .hero-message { max-width: 440px; margin: 17px 0 0; color: var(--ink); font-size: .98rem; line-height: 1.85; text-shadow: 0 1px 9px #ffffffd9; }
+    .hero-date { margin: 26px 0 0; color: var(--green-dark); font-size: .76rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    .hero-date::before { display: inline-block; width: 30px; height: 1px; margin: 0 12px 4px 0; background: var(--green-dark); content: ""; }
+    .crown { display: block; width: 58px; height: 46px; margin: 0 0 22px; color: var(--green-dark); filter: drop-shadow(0 3px 8px #ffffffa6); }
+    .butterfly { position: absolute; z-index: 1; width: 34px; color: var(--green-dark); pointer-events: none; filter: drop-shadow(0 3px 8px #ffffffa6); animation: butterfly-float 5s ease-in-out infinite; }
     .butterfly svg { display: block; width: 100%; height: auto; overflow: visible; }
     .butterfly-one { top: 16%; left: 44%; width: 34px; }
-    .butterfly-two { right: 43%; bottom: 17%; width: 25px; color: #fff; animation-delay: -2s; }
-    .butterfly-three { top: 19%; right: 9%; width: 23px; color: #d7bd81; animation-delay: -3.4s; }
+    .butterfly-two { right: 43%; bottom: 17%; width: 25px; color: var(--emerald); animation-delay: -2s; }
+    .butterfly-three { top: 19%; right: 9%; width: 23px; color: #b98c35; animation-delay: -3.4s; }
     @keyframes butterfly-float {
       0%,100% { transform: translate3d(0,0,0) rotate(-8deg); }
       50% { transform: translate3d(8px,-15px,0) rotate(8deg); }
@@ -68,8 +78,8 @@
       color: var(--green-dark); font-size: .73rem; font-weight: 700; letter-spacing: .09em; text-decoration: none;
       transition: transform .25s,background .25s,color .25s,box-shadow .25s;
     }
-    .hero .button { border-color: #ffffffa6; background: #ffffff12; color: white; backdrop-filter: blur(8px); }
-    .hero .button:hover { border-color: white; background: white; color: var(--green-dark); box-shadow: 0 12px 26px #002c1d3d; }
+    .hero .button { border-color: var(--green-dark); background: #ffffffbd; color: var(--green-dark); backdrop-filter: blur(8px); }
+    .hero .button:hover { border-color: var(--green-dark); background: var(--green-dark); color: white; box-shadow: 0 12px 26px #002c1d3d; }
     .button:hover { transform: translateY(-3px); background: var(--green-dark); color: white; box-shadow: 0 12px 26px #15583f2b; }
     .portrait-wrap { position: relative; justify-self: center; width: min(100%,390px); padding: 11px; border: 1px solid #e8d8a8b3; border-radius: 48% 48% 5px 5px; background: #ffffff12; box-shadow: 0 24px 70px #002c1d4d; }
     .portrait-wrap::before { position: absolute; z-index: -1; inset: -14px 20px 20px -14px; border: 1px solid #ffffff5c; border-radius: 48% 48% 5px 5px; content: ""; }
@@ -78,7 +88,25 @@
     .crown-orbit { position: absolute; z-index: 2; top: 4%; right: 2%; width: 48px; color: #f0dda7; filter: drop-shadow(0 3px 8px #002c1d55); animation: butterfly-float 5.5s ease-in-out infinite; }
     .crown-orbit svg { display: block; width: 100%; }
 
-    .section { padding: clamp(75px,10vw,120px) 24px; }
+    .section { position: relative; isolation: isolate; padding: clamp(75px,10vw,120px) 24px; }
+    .section > .inner { position: relative; z-index: 1; }
+    .section > .countdown-inner { position: relative; z-index: 1; }
+    .floral-frame { position: absolute; z-index: 0; inset: 14px; border: 1px solid #087a5552; border-radius: 22px; pointer-events: none; }
+    .floral-frame::after {
+      position: absolute; inset: -11px;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 43c-8 7-14 8-20 8 4-6 7-11 17-13m8-3c7 3 12 7 15 13-7-1-12-2-19-7' fill='none' stroke='%23064d3b' stroke-linecap='round' stroke-width='3'/%3E%3Cellipse cx='18' cy='45' rx='5' ry='9' transform='rotate(-48 18 45)' fill='%233f9a68'/%3E%3Cellipse cx='47' cy='43' rx='5' ry='9' transform='rotate(50 47 43)' fill='%232b8056'/%3E%3Ccircle cx='32' cy='18' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='22' cy='24' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='27' cy='35' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='38' cy='35' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='43' cy='24' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='32' cy='27' r='5' fill='%23d7bd81' stroke='%23064d3b' stroke-width='1.5'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 43c-8 7-14 8-20 8 4-6 7-11 17-13m8-3c7 3 12 7 15 13-7-1-12-2-19-7' fill='none' stroke='%23064d3b' stroke-linecap='round' stroke-width='3'/%3E%3Cellipse cx='18' cy='45' rx='5' ry='9' transform='rotate(-48 18 45)' fill='%233f9a68'/%3E%3Cellipse cx='47' cy='43' rx='5' ry='9' transform='rotate(50 47 43)' fill='%232b8056'/%3E%3Ccircle cx='32' cy='18' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='22' cy='24' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='27' cy='35' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='38' cy='35' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='43' cy='24' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='32' cy='27' r='5' fill='%23d7bd81' stroke='%23064d3b' stroke-width='1.5'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 43c-8 7-14 8-20 8 4-6 7-11 17-13m8-3c7 3 12 7 15 13-7-1-12-2-19-7' fill='none' stroke='%23064d3b' stroke-linecap='round' stroke-width='3'/%3E%3Cellipse cx='18' cy='45' rx='5' ry='9' transform='rotate(-48 18 45)' fill='%233f9a68'/%3E%3Cellipse cx='47' cy='43' rx='5' ry='9' transform='rotate(50 47 43)' fill='%232b8056'/%3E%3Ccircle cx='32' cy='18' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='22' cy='24' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='27' cy='35' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='38' cy='35' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='43' cy='24' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='32' cy='27' r='5' fill='%23d7bd81' stroke='%23064d3b' stroke-width='1.5'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 43c-8 7-14 8-20 8 4-6 7-11 17-13m8-3c7 3 12 7 15 13-7-1-12-2-19-7' fill='none' stroke='%23064d3b' stroke-linecap='round' stroke-width='3'/%3E%3Cellipse cx='18' cy='45' rx='5' ry='9' transform='rotate(-48 18 45)' fill='%233f9a68'/%3E%3Cellipse cx='47' cy='43' rx='5' ry='9' transform='rotate(50 47 43)' fill='%232b8056'/%3E%3Ccircle cx='32' cy='18' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='22' cy='24' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='27' cy='35' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='38' cy='35' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='43' cy='24' r='8' fill='%23fff' stroke='%23064d3b' stroke-width='1.5'/%3E%3Ccircle cx='32' cy='27' r='5' fill='%23d7bd81' stroke='%23064d3b' stroke-width='1.5'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: left top,right top,left bottom,right bottom;
+      background-size: 54px 54px;
+      content: "";
+      filter: drop-shadow(0 2px 3px #064d3b24);
+    }
+    .hero .floral-frame, .countdown-section .floral-frame { border-color: #f1dfaa91; }
+    .hero .floral-frame::after, .countdown-section .floral-frame::after { filter: drop-shadow(0 2px 5px #002c1d80); }
     .inner { width: min(100%,1040px); margin: 0 auto; }
     .heading { margin: 0 auto 44px; text-align: center; }
     .heading h2 { margin: 0; font: 400 clamp(2.4rem,6vw,4rem)/1.1 "Playfair Display",Georgia,serif; }
@@ -147,10 +175,13 @@
     body.motion-ready .reveal.is-exiting { opacity: 0; transform: translateY(-18px) scale(.985); }
     @media (max-width:760px) {
       .hero { min-height: auto; padding: 78px 24px 72px; }
+      .hero { background-position: center center; }
       .hero-inner { grid-template-columns: 1fr; gap: 42px; }
       .intro { text-align: center; }
       .hero-message { margin-right: auto; margin-left: auto; }
       .crown { margin-right: auto; margin-left: auto; }
+      .hero-age-row { justify-content: center; margin-left: 0; }
+      .hero-age { font-size: clamp(7rem,28vw,10rem); }
       .portrait-wrap { width: min(72vw,330px); }
       .hero::before { top: auto; right: 50%; bottom: 6%; width: min(76vw,380px); transform: translateX(50%); }
       .hero::after { top: auto; right: 50%; bottom: 4%; width: min(84vw,420px); transform: translateX(50%); }
@@ -185,6 +216,7 @@
   <div class="invite">
     <main>
       <section class="hero" aria-labelledby="invitation-title">
+        <span class="floral-frame" aria-hidden="true"></span>
         <span class="butterfly butterfly-one" aria-hidden="true"><svg viewBox="0 0 48 48" fill="currentColor"><path d="M23 23C17 8 4 8 7 19c1 5 8 8 16 6Zm2 0c6-15 19-15 16-4-1 5-8 8-16 6ZM23 25C16 20 9 23 12 31c2 5 7 6 11-2Zm2 0c7-5 14-2 11 6-2 5-7 6-11-2Z"/><path d="M24 20c-4-6-4-9-1-12m1 12c4-6 4-9 1-12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span>
         <span class="butterfly butterfly-two" aria-hidden="true"><svg viewBox="0 0 48 48" fill="currentColor"><path d="M23 23C17 8 4 8 7 19c1 5 8 8 16 6Zm2 0c6-15 19-15 16-4-1 5-8 8-16 6ZM23 25C16 20 9 23 12 31c2 5 7 6 11-2Zm2 0c7-5 14-2 11 6-2 5-7 6-11-2Z"/><path d="M24 20c-4-6-4-9-1-12m1 12c4-6 4-9 1-12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span>
         <span class="butterfly butterfly-three" aria-hidden="true"><svg viewBox="0 0 48 48" fill="currentColor"><path d="M23 23C17 8 4 8 7 19c1 5 8 8 16 6Zm2 0c6-15 19-15 16-4-1 5-8 8-16 6ZM23 25C16 20 9 23 12 31c2 5 7 6 11-2Zm2 0c7-5 14-2 11 6-2 5-7 6-11-2Z"/><path d="M24 20c-4-6-4-9-1-12m1 12c4-6 4-9 1-12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span>
@@ -192,7 +224,7 @@
           <div class="intro reveal">
             <svg class="crown" viewBox="0 0 64 48" fill="none" aria-hidden="true"><path d="m8 16 13 10 11-17 11 17 13-10-6 24H14L8 16Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><path d="M15 34h34M7 43h50" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><circle cx="8" cy="13" r="3" fill="currentColor"/><circle cx="32" cy="7" r="3" fill="currentColor"/><circle cx="56" cy="13" r="3" fill="currentColor"/></svg>
             <p class="eyebrow" id="invite-eyebrow"></p>
-            <h1 class="serif" id="invitation-title"><small id="invite-title"></small><span class="hero-name" id="birthday-name"></span></h1>
+            <h1 class="serif" id="invitation-title"><small id="invite-title"></small><span class="hero-age-row"><span class="hero-age" id="birthday-age-highlight"></span><span class="hero-age-suffix" id="birthday-age-suffix"></span></span><span class="hero-name" id="birthday-name"></span></h1>
             <p class="hero-message" id="birthday-message"></p>
             <p class="hero-date" id="event-date-label"></p>
             <a class="button" href="#calendar">Acompáñame <span aria-hidden="true">↓</span></a>
@@ -206,6 +238,7 @@
       </section>
 
       <section class="section calendar-section" id="calendar" aria-labelledby="calendar-title">
+        <span class="floral-frame" aria-hidden="true"></span>
         <div class="inner">
           <div class="heading reveal">
             <p class="eyebrow">Reserva la fecha</p>
@@ -227,6 +260,7 @@
       </section>
 
       <section class="section countdown-section" aria-labelledby="countdown-title">
+        <span class="floral-frame" aria-hidden="true"></span>
         <div class="inner countdown-inner">
           <div class="heading reveal">
             <p class="eyebrow">La cuenta regresiva</p>
@@ -244,6 +278,7 @@
       </section>
 
       <section class="section details-section" aria-labelledby="details-title">
+        <span class="floral-frame" aria-hidden="true"></span>
         <div class="inner">
           <div class="heading reveal">
             <p class="eyebrow">Celebra conmigo</p>
@@ -274,6 +309,7 @@
       </section>
 
       <section class="section parents-section" aria-labelledby="parents-title">
+        <span class="floral-frame" aria-hidden="true"></span>
         <div class="inner heading reveal">
           <p class="eyebrow">Con todo nuestro amor</p>
           <h2 id="parents-title">Quienes te invitan</h2>
@@ -283,6 +319,7 @@
       </section>
 
       <section class="section gift-section" aria-labelledby="gift-title">
+        <span class="floral-frame" aria-hidden="true"></span>
         <div class="inner">
           <div class="heading reveal">
             <p class="eyebrow">Un detalle de corazón</p>
@@ -296,6 +333,7 @@
       </section>
 
       <section class="section closing" aria-labelledby="rsvp-title">
+        <span class="floral-frame" aria-hidden="true"></span>
         <div class="inner heading reveal">
           <p class="eyebrow">Tu presencia es mi mejor regalo</p>
           <h2 id="rsvp-title">¿Me acompañas?</h2>
@@ -367,7 +405,11 @@
       document.title = `Mis 15 · ${text(data.birthday.name)}`;
       document.querySelector('meta[name="description"]').content = text(data.birthday.message);
       setText("invite-eyebrow", data.birthday.eyebrow);
-      setText("invite-title", data.birthday.title);
+      const title = text(data.birthday.title).trim();
+      const titleParts = title.match(/^(.*?)\s*(\d+)\s*(.*?)$/);
+      setText("invite-title", titleParts?.[1] || "Mis");
+      setText("birthday-age-highlight", titleParts?.[2] || data.birthday.age);
+      setText("birthday-age-suffix", titleParts?.[3] || "años");
       setText("birthday-name", data.birthday.name);
       setText("birthday-message", data.birthday.message);
       setText("event-date-label", formatDate(eventDate, { weekday: "long", day: "numeric", month: "long", year: "numeric" }));
