@@ -1,0 +1,66 @@
+{
+  "_instrucciones": [
+    "Plantilla de datos de prueba para personalizar la invitación.",
+    "Edita los valores y conserva las comas y comillas dobles para mantener el JSON válido.",
+    "La fecha usa AAAA-MM-DD y la hora HH:MM en la zona horaria local del navegador.",
+    "Cambia birthday.photo.src por la ruta de una foto añadida al repositorio, por ejemplo ./assets/foto.jpg.",
+    "En rsvp.whatsapp escribe el número internacional con código de país, solo números y sin el signo +.",
+    "Publica invitation.json junto a index.html en GitHub Pages."
+  ],
+  "birthday": {
+    "name": "Valentina",
+    "age": 15,
+    "title": "Mis 15 años",
+    "eyebrow": "Con mucha ilusión te invito a celebrar",
+    "message": "Un sueño que comienza, una noche mágica y personas especiales para compartirla. ¡Me encantará que estés ahí!",
+    "photo": {
+      "src": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=85",
+      "alt": "Retrato de Valentina, la quinceañera"
+    }
+  },
+  "event": {
+    "date": "2026-11-28",
+    "time": "19:00"
+  },
+  "calendar": {
+    "message": "Marca en tu calendario este día tan especial. ¡Te espero para compartir una noche inolvidable!"
+  },
+  "countdown": {
+    "message": "El tiempo vuela cuando esperamos algo bonito. Acompáñame en esta celebración tan especial."
+  },
+  "reception": {
+    "intro": "La noche, el lugar y todos los detalles para encontrarnos.",
+    "venue": "Jardín Magnolia",
+    "address": "Av. de las Rosas 123, Ciudad",
+    "mapUrl": "https://maps.google.com/?q=Jard%C3%ADn+Magnolia"
+  },
+  "attire": {
+    "code": "Formal",
+    "reservedColors": [
+      {
+        "name": "Verde esmeralda",
+        "hex": "#087A55"
+      },
+      {
+        "name": "Blanco",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "note": "Por favor, evita vestir de verde esmeralda o blanco; son los colores reservados para la quinceañera."
+  },
+  "parents": {
+    "message": "Con mucha alegría, queremos invitarte a celebrar este momento tan especial junto a nuestra hija.",
+    "mother": "María González",
+    "father": "Carlos González"
+  },
+  "gift": {
+    "message": "Tu compañía es el mejor regalo. Si deseas tener un detalle conmigo, agradeceré mucho tu lluvia de sobres."
+  },
+  "rsvp": {
+    "whatsapp": "573001234567",
+    "whatsappMessage": "Hola, confirmo mi asistencia a los 15 años de {name}.",
+    "message": "Confirma tu asistencia por WhatsApp. ¡Estoy contando los días para celebrar contigo!",
+    "deadline": "2026-11-14",
+    "deadlineMessage": "Por favor, confirma antes del 14 de noviembre de 2026."
+  }
+}

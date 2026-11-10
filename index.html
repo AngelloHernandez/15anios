@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#064d3b">
+  <meta name="description" content="Acompáñame a celebrar mis quince años.">
+  <title>Mis 15 · Invitación</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17352b;
+      --muted: #64776d;
+      --green: #087a55;
+      --green-dark: #064d3b;
+      --emerald: #0c805b;
+      --mint: #e8f3ec;
+      --white: #fff;
+      --paper: #fcfdfb;
+      --gold: #d7bd81;
+      --line: #dce8df;
+      font-family: "DM Sans", sans-serif;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); }
+    a { color: inherit; }
+    a, button { -webkit-tap-highlight-color: transparent; }
+    .invite { overflow: hidden; }
+    .serif { font-family: "Playfair Display", Georgia, serif; }
+    .hero {
+      position: relative; display: grid; min-height: min(940px,100svh); align-items: center; overflow: hidden; isolation: isolate;
+      padding: clamp(72px,9vw,112px) 7vw;
+      background: radial-gradient(ellipse at 78% 47%,#13825d 0,transparent 42%),linear-gradient(132deg,#064d3b 0%,#08714f 52%,#0b5a40 100%);
+    }
+    .hero::before, .hero::after {
+      position: absolute; top: 50%; right: 8%; width: min(42vw,540px); aspect-ratio: 1;
+      border: 1px solid #ffffff3d; border-radius: 50%; content: ""; pointer-events: none; transform: translateY(-50%);
+    }
+    .hero::after { right: 6%; width: min(46vw,590px); border-color: #d7bd8159; }
+    .hero-inner { position: relative; z-index: 1; display: grid; width: min(1120px,100%); margin: auto; grid-template-columns: 1.05fr .95fr; align-items: center; gap: clamp(32px,8vw,100px); }
+    .intro { text-align: left; }
+    .hero .eyebrow { margin: 0 0 15px; color: #e8d8a8; font-size: .68rem; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; }
+    .hero h1 { margin: 0; color: var(--white); font: 500 clamp(2.7rem,6.6vw,5.8rem)/1.08 "Cinzel",Georgia,serif; letter-spacing: .035em; text-shadow: 0 5px 25px #002c1d59; }
+    .hero h1 small { display: block; margin-bottom: 9px; color: #f5edda; font: 500 clamp(1.15rem,2vw,1.5rem) "Cinzel",Georgia,serif; letter-spacing: .24em; text-transform: uppercase; }
+    .hero-name { display: block; margin: 0 0 -3px; color: #f0dda7; font: 400 clamp(4.5rem,10vw,8.2rem)/1.05 "Great Vibes","Playfair Display",cursive; letter-spacing: 0; }
+    .hero-message { max-width: 440px; margin: 17px 0 0; color: #eef7f1; font-size: .98rem; line-height: 1.85; }
+    .hero-date { margin: 26px 0 0; color: var(--white); font-size: .76rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    .hero-date::before { display: inline-block; width: 30px; height: 1px; margin: 0 12px 4px 0; background: #e8d8a8; content: ""; }
+    .crown { display: block; width: 58px; height: 46px; margin: 0 0 22px; color: #e8d8a8; filter: drop-shadow(0 3px 8px #002c1d45); }
+    .butterfly { position: absolute; z-index: 1; width: 34px; color: #f0dda7; pointer-events: none; filter: drop-shadow(0 3px 8px #002c1d55); animation: butterfly-float 5s ease-in-out infinite; }
+    .butterfly svg { display: block; width: 100%; height: auto; overflow: visible; }
+    .butterfly-one { top: 16%; left: 44%; width: 34px; }
+    .butterfly-two { right: 43%; bottom: 17%; width: 25px; color: #fff; animation-delay: -2s; }
+    .butterfly-three { top: 19%; right: 9%; width: 23px; color: #d7bd81; animation-delay: -3.4s; }
+    @keyframes butterfly-float {
+      0%,100% { transform: translate3d(0,0,0) rotate(-8deg); }
+      50% { transform: translate3d(8px,-15px,0) rotate(8deg); }
+    }
+    .button {
+      display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 10px;
+      margin-top: 32px; padding: 0 23px; border: 1px solid var(--green-dark); border-radius: 99px;
+      color: var(--green-dark); font-size: .73rem; font-weight: 700; letter-spacing: .09em; text-decoration: none;
+      transition: transform .25s,background .25s,color .25s,box-shadow .25s;
+    }
+    .hero .button { border-color: #ffffffa6; background: #ffffff12; color: white; backdrop-filter: blur(8px); }
+    .hero .button:hover { border-color: white; background: white; color: var(--green-dark); box-shadow: 0 12px 26px #002c1d3d; }
+    .button:hover { transform: translateY(-3px); background: var(--green-dark); color: white; box-shadow: 0 12px 26px #15583f2b; }
+    .portrait-wrap { position: relative; justify-self: center; width: min(100%,390px); padding: 11px; border: 1px solid #e8d8a8b3; border-radius: 48% 48% 5px 5px; background: #ffffff12; box-shadow: 0 24px 70px #002c1d4d; }
+    .portrait-wrap::before { position: absolute; z-index: -1; inset: -14px 20px 20px -14px; border: 1px solid #ffffff5c; border-radius: 48% 48% 5px 5px; content: ""; }
+    .portrait { position: relative; display: block; width: 100%; aspect-ratio: 4/5; border-radius: 48% 48% 3px 3px; object-fit: cover; object-position: center 35%; background: linear-gradient(145deg,#dce8df,#f2eee4); }
+    .portrait-label { position: absolute; right: -35px; bottom: 34px; padding: 14px 20px; border: 1px solid #d7bd81a6; background: var(--paper); color: var(--green-dark); font: italic 1rem "Playfair Display",Georgia,serif; box-shadow: 0 8px 26px #002c1d30; }
+    .crown-orbit { position: absolute; z-index: 2; top: 4%; right: 2%; width: 48px; color: #f0dda7; filter: drop-shadow(0 3px 8px #002c1d55); animation: butterfly-float 5.5s ease-in-out infinite; }
+    .crown-orbit svg { display: block; width: 100%; }
+
+    .section { padding: clamp(75px,10vw,120px) 24px; }
+    .inner { width: min(100%,1040px); margin: 0 auto; }
+    .heading { margin: 0 auto 44px; text-align: center; }
+    .heading h2 { margin: 0; font: 400 clamp(2.4rem,6vw,4rem)/1.1 "Playfair Display",Georgia,serif; }
+    .heading p:not(.eyebrow) { max-width: 530px; margin: 16px auto 0; color: var(--muted); font-size: .94rem; line-height: 1.75; }
+    .calendar-section, .parents-section { background: var(--mint); }
+    .calendar { width: min(100%,800px); margin: auto; padding: clamp(22px,5vw,42px); border: 1px solid #d5e5d9; background: var(--white); box-shadow: 0 18px 55px #183d2810; }
+    .calendar-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 27px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+    .calendar-label { margin: 0 0 6px; color: var(--muted); font-size: .64rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .calendar-month { margin: 0; color: var(--green-dark); font: 500 clamp(1.35rem,4vw,2rem) "Playfair Display",Georgia,serif; }
+    .calendar-month-badge { flex: 0 0 auto; padding: 10px 14px; border-radius: 99px; background: var(--mint); color: var(--green-dark); font-size: .67rem; font-weight: 700; letter-spacing: .08em; }
+    .week { display: grid; grid-template-columns: repeat(7,minmax(0,1fr)); gap: clamp(4px,1.7vw,12px); text-align: center; }
+    .calendar-day { position: relative; display: flex; min-width: 0; min-height: clamp(95px,14vw,125px); flex-direction: column; align-items: center; justify-content: flex-start; gap: 12px; padding: 14px 3px 10px; border: 1px solid #e4ede6; border-radius: 14px; background: #fcfdfb; transition: transform .22s,border-color .22s,box-shadow .22s; }
+    .calendar-day:hover { transform: translateY(-3px); border-color: #85b59c; box-shadow: 0 8px 18px #064d3b12; }
+    .weekday { color: var(--muted); font-size: clamp(.55rem,1.55vw,.72rem); font-weight: 700; letter-spacing: .025em; text-transform: uppercase; }
+    .day-number { display: grid; width: clamp(34px,6.3vw,48px); aspect-ratio: 1; place-items: center; border-radius: 50%; color: var(--ink); font: 500 clamp(1rem,3vw,1.4rem) "Playfair Display",Georgia,serif; }
+    .calendar-day.selected { border-color: var(--green-dark); background: var(--green-dark); box-shadow: 0 8px 22px #064d3b38; }
+    .calendar-day.selected .weekday { color: #e4f0e9; }
+    .calendar-day.selected .day-number { background: white; color: var(--green-dark); }
+    .selected-tag { position: absolute; right: -6px; top: -9px; padding: 5px 7px; border: 2px solid white; border-radius: 99px; background: #d7bd81; color: #17352b; font-size: .51rem; font-weight: 800; letter-spacing: .04em; }
+    .calendar-summary { display: flex; align-items: center; gap: 14px; margin-top: 24px; padding: 17px 19px; border-left: 3px solid var(--green); border-radius: 0 10px 10px 0; background: var(--mint); }
+    .calendar-summary-icon { display: grid; width: 40px; height: 40px; flex: 0 0 auto; place-items: center; border-radius: 50%; background: white; color: var(--green-dark); font-size: 1.1rem; }
+    .calendar-caption { margin: 0; color: var(--green-dark); font-size: .84rem; font-weight: 700; line-height: 1.6; }
+    .calendar-caption span { display: block; margin-top: 3px; color: var(--muted); font-size: .76rem; font-weight: 400; }
+
+    .countdown-section {
+      position: relative; display: grid; min-height: 100svh; align-items: center; overflow: hidden;
+      background: radial-gradient(ellipse at 50% 20%,#16815b 0,#08714f 48%,#064d3b 100%); color: white;
+    }
+    .countdown-section::before, .countdown-section::after {
+      position: absolute; top: 50%; left: 50%; width: min(75vw,700px); aspect-ratio: 1;
+      border: 1px solid #ffffff1c; border-radius: 50%; content: ""; pointer-events: none; transform: translate(-50%,-50%);
+    }
+    .countdown-section::after { width: min(89vw,830px); border-color: #c4a66e33; }
+    .countdown-inner { position: relative; z-index: 1; }
+    .countdown-section .eyebrow { color: #dfc995; }
+    .countdown-section .heading h2 { color: white; }
+    .countdown-section .heading p:not(.eyebrow) { color: #d3e1d8; }
+    .countdown { display: flex; justify-content: center; gap: clamp(13px,5vw,65px); margin-top: 48px; }
+    .count-unit { min-width: clamp(55px,12vw,110px); text-align: center; }
+    .count-unit strong { display: block; color: white; font: 400 clamp(2.5rem,9vw,6rem)/1 "Playfair Display",Georgia,serif; font-variant-numeric: tabular-nums; }
+    .count-unit span { display: block; margin-top: 12px; color: #dfc995; font-size: .65rem; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; }
+    .count-note { margin: 36px 0 0; color: #d3e1d8; font-size: .84rem; text-align: center; }
+
+    .details-section, .gift-section { background: var(--paper); }
+    .cards { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
+    .card { padding: 31px 24px; border: 1px solid #e1e8df; background: white; text-align: center; transition: transform .3s,box-shadow .3s,border-color .3s; }
+    .card:hover { transform: translateY(-7px); border-color: #b3c9b8; box-shadow: 0 18px 38px #183d2810; }
+    .icon { display: grid; width: 46px; height: 46px; place-items: center; margin: 0 auto 18px; border: 1px solid var(--gold); border-radius: 50%; color: var(--green); }
+    .icon svg { width: 20px; height: 20px; }
+    .card h3 { margin: 0 0 12px; font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; }
+    .card p { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.75; }
+    .card a { display: inline-block; margin-top: 12px; color: var(--green-dark); font-size: .76rem; font-weight: 700; text-underline-offset: 4px; }
+    .colors { display: flex; justify-content: center; gap: 9px; margin: 18px 0 12px; }
+    .swatch { width: 24px; height: 24px; border: 1px solid #d8ded8; border-radius: 50%; }
+    .parents-names { margin: 0; color: var(--green-dark); font: 400 clamp(1.8rem,5vw,3rem) "Playfair Display",Georgia,serif; text-align: center; }
+    .parents-amp { padding: 0 10px; color: var(--gold); font-style: italic; }
+    .gift { max-width: 660px; margin: auto; padding: clamp(28px,6vw,48px); border: 1px solid #e1e8df; text-align: center; }
+    .gift-mark { display: grid; width: 52px; height: 52px; place-items: center; margin: 0 auto 18px; border: 1px solid var(--gold); border-radius: 50%; color: var(--green); font-size: 1.2rem; }
+    .gift p { margin: 0; color: var(--muted); font-size: .94rem; line-height: 1.8; }
+    .closing { padding-bottom: 95px; background: var(--paper); text-align: center; }
+    .footer { padding: 25px; border-top: 1px solid var(--line); color: var(--muted); font-size: .72rem; letter-spacing: .08em; text-align: center; }
+    .footer span { color: var(--green); }
+    .error { max-width: 620px; margin: 30px auto; padding: 18px 22px; border: 1px solid #b64343; background: #fff4f2; color: #7d2424; font-size: .9rem; line-height: 1.6; }
+    body.motion-ready .reveal { opacity: 0; transform: translateY(28px) scale(.99); transition: opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1); }
+    body.motion-ready .reveal.is-visible { opacity: 1; transform: translateY(0) scale(1); }
+    body.motion-ready .reveal.is-exiting { opacity: 0; transform: translateY(-18px) scale(.985); }
+    @media (max-width:760px) {
+      .hero { min-height: auto; padding: 78px 24px 72px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 42px; }
+      .intro { text-align: center; }
+      .hero-message { margin-right: auto; margin-left: auto; }
+      .crown { margin-right: auto; margin-left: auto; }
+      .portrait-wrap { width: min(72vw,330px); }
+      .hero::before { top: auto; right: 50%; bottom: 6%; width: min(76vw,380px); transform: translateX(50%); }
+      .hero::after { top: auto; right: 50%; bottom: 4%; width: min(84vw,420px); transform: translateX(50%); }
+      .butterfly-one { top: 43%; left: 8%; }
+      .butterfly-two { right: 8%; bottom: 11%; }
+      .butterfly-three { top: 8%; right: 8%; }
+      .cards { grid-template-columns: 1fr; max-width: 460px; margin: auto; }
+      .countdown-section { min-height: 82svh; }
+    }
+    @media (max-width:420px) {
+      .countdown { gap: 8px; }
+      .count-unit { min-width: 0; flex: 1; }
+      .count-unit span { font-size: .55rem; letter-spacing: .09em; }
+      .calendar { padding: 20px 12px; }
+      .calendar-top { align-items: flex-start; }
+      .calendar-month-badge { max-width: 100px; padding: 8px 10px; font-size: .58rem; text-align: center; }
+      .week { gap: 4px; }
+      .calendar-day { min-height: 85px; gap: 10px; padding: 12px 1px 8px; border-radius: 11px; }
+      .weekday { font-size: .55rem; letter-spacing: -.025em; }
+      .selected-tag { right: -4px; padding: 4px 5px; font-size: .45rem; }
+      .calendar-summary { gap: 10px; padding: 14px 12px; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      html { scroll-behavior: auto; }
+      body.motion-ready .reveal, body.motion-ready .reveal.is-exiting { opacity: 1; transform: none; transition: none; }
+      .card, .button, .calendar-day { transition: none; }
+      .butterfly, .crown-orbit { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="invite">
+    <main>
+      <section class="hero" aria-labelledby="invitation-title">
+        <span class="butterfly butterfly-one" aria-hidden="true"><svg viewBox="0 0 48 48" fill="currentColor"><path d="M23 23C17 8 4 8 7 19c1 5 8 8 16 6Zm2 0c6-15 19-15 16-4-1 5-8 8-16 6ZM23 25C16 20 9 23 12 31c2 5 7 6 11-2Zm2 0c7-5 14-2 11 6-2 5-7 6-11-2Z"/><path d="M24 20c-4-6-4-9-1-12m1 12c4-6 4-9 1-12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span>
+        <span class="butterfly butterfly-two" aria-hidden="true"><svg viewBox="0 0 48 48" fill="currentColor"><path d="M23 23C17 8 4 8 7 19c1 5 8 8 16 6Zm2 0c6-15 19-15 16-4-1 5-8 8-16 6ZM23 25C16 20 9 23 12 31c2 5 7 6 11-2Zm2 0c7-5 14-2 11 6-2 5-7 6-11-2Z"/><path d="M24 20c-4-6-4-9-1-12m1 12c4-6 4-9 1-12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span>
+        <span class="butterfly butterfly-three" aria-hidden="true"><svg viewBox="0 0 48 48" fill="currentColor"><path d="M23 23C17 8 4 8 7 19c1 5 8 8 16 6Zm2 0c6-15 19-15 16-4-1 5-8 8-16 6ZM23 25C16 20 9 23 12 31c2 5 7 6 11-2Zm2 0c7-5 14-2 11 6-2 5-7 6-11-2Z"/><path d="M24 20c-4-6-4-9-1-12m1 12c4-6 4-9 1-12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span>
+        <div class="hero-inner">
+          <div class="intro reveal">
+            <svg class="crown" viewBox="0 0 64 48" fill="none" aria-hidden="true"><path d="m8 16 13 10 11-17 11 17 13-10-6 24H14L8 16Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><path d="M15 34h34M7 43h50" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><circle cx="8" cy="13" r="3" fill="currentColor"/><circle cx="32" cy="7" r="3" fill="currentColor"/><circle cx="56" cy="13" r="3" fill="currentColor"/></svg>
+            <p class="eyebrow" id="invite-eyebrow"></p>
+            <h1 class="serif" id="invitation-title"><small id="invite-title"></small><span class="hero-name" id="birthday-name"></span></h1>
+            <p class="hero-message" id="birthday-message"></p>
+            <p class="hero-date" id="event-date-label"></p>
+            <a class="button" href="#calendar">Acompáñame <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="portrait-wrap reveal">
+            <span class="crown-orbit" aria-hidden="true"><svg viewBox="0 0 64 48" fill="none"><path d="m8 16 13 10 11-17 11 17 13-10-6 24H14L8 16Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><path d="M15 34h34M7 43h50" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><circle cx="8" cy="13" r="3" fill="currentColor"/><circle cx="32" cy="7" r="3" fill="currentColor"/><circle cx="56" cy="13" r="3" fill="currentColor"/></svg></span>
+            <img class="portrait" id="birthday-photo" src="" alt="">
+            <span class="portrait-label" id="portrait-label"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section calendar-section" id="calendar" aria-labelledby="calendar-title">
+        <div class="inner">
+          <div class="heading reveal">
+            <p class="eyebrow">Reserva la fecha</p>
+            <h2 id="calendar-title">Un día para celebrar</h2>
+            <p id="calendar-intro"></p>
+          </div>
+          <div class="calendar reveal">
+            <div class="calendar-top">
+              <div><p class="calendar-label">Semana de la celebración</p><h3 class="calendar-month" id="calendar-month"></h3></div>
+              <span class="calendar-month-badge">✦ · 15 AÑOS</span>
+            </div>
+            <div class="week" id="calendar-week" role="grid" aria-label="Semana del evento"></div>
+            <div class="calendar-summary">
+              <span class="calendar-summary-icon" aria-hidden="true">✓</span>
+              <p class="calendar-caption" id="calendar-caption"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section countdown-section" aria-labelledby="countdown-title">
+        <div class="inner countdown-inner">
+          <div class="heading reveal">
+            <p class="eyebrow">La cuenta regresiva</p>
+            <h2 id="countdown-title">Cada segundo nos acerca</h2>
+            <p id="countdown-intro"></p>
+          </div>
+          <div class="countdown reveal" aria-label="Tiempo restante para la celebración">
+            <div class="count-unit"><strong id="days">--</strong><span>Días</span></div>
+            <div class="count-unit"><strong id="hours">--</strong><span>Horas</span></div>
+            <div class="count-unit"><strong id="minutes">--</strong><span>Minutos</span></div>
+            <div class="count-unit"><strong id="seconds">--</strong><span>Segundos</span></div>
+          </div>
+          <p class="count-note reveal" id="countdown-note" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="section details-section" aria-labelledby="details-title">
+        <div class="inner">
+          <div class="heading reveal">
+            <p class="eyebrow">Celebra conmigo</p>
+            <h2 id="details-title">Los detalles de la noche</h2>
+            <p id="details-intro"></p>
+          </div>
+          <div class="cards">
+            <article class="card reveal">
+              <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="16" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M7.5 3v4M16.5 3v4M4 9.5h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+              <h3>La recepción</h3>
+              <p id="reception-details"></p>
+            </article>
+            <article class="card reveal">
+              <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M19.5 10c0 5.2-7.5 11-7.5 11S4.5 15.2 4.5 10a7.5 7.5 0 1 1 15 0Z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg></div>
+              <h3>Cómo llegar</h3>
+              <p id="venue-details"></p>
+              <a id="venue-map" target="_blank" rel="noreferrer">Ver ubicación</a>
+            </article>
+            <article class="card reveal">
+              <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m12 3.5 2.3 5.4 5.9.5-4.5 3.9 1.4 5.7-5.1-3-5.1 3 1.4-5.7-4.5-3.9 5.9-.5L12 3.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+              <h3>Código de vestimenta</h3>
+              <p id="dress-code"></p>
+              <div class="colors" id="reserved-colors" aria-label="Colores reservados"></div>
+              <p id="dress-note"></p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section parents-section" aria-labelledby="parents-title">
+        <div class="inner heading reveal">
+          <p class="eyebrow">Con todo nuestro amor</p>
+          <h2 id="parents-title">Quienes te invitan</h2>
+          <p id="parents-message"></p>
+          <p class="parents-names"><span id="mother-name"></span><span class="parents-amp">&amp;</span><span id="father-name"></span></p>
+        </div>
+      </section>
+
+      <section class="section gift-section" aria-labelledby="gift-title">
+        <div class="inner">
+          <div class="heading reveal">
+            <p class="eyebrow">Un detalle de corazón</p>
+            <h2 id="gift-title">Lluvia de sobres</h2>
+          </div>
+          <div class="gift reveal">
+            <div class="gift-mark" aria-hidden="true">♡</div>
+            <p id="gift-message"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section closing" aria-labelledby="rsvp-title">
+        <div class="inner heading reveal">
+          <p class="eyebrow">Tu presencia es mi mejor regalo</p>
+          <h2 id="rsvp-title">¿Me acompañas?</h2>
+          <p id="rsvp-message"></p>
+          <a class="button" id="rsvp-link" target="_blank" rel="noreferrer">Confirmar asistencia por WhatsApp</a>
+          <p id="rsvp-deadline"></p>
+        </div>
+      </section>
+    </main>
+    <footer class="footer" id="invite-footer"></footer>
+    <div class="error" id="config-error" role="alert" hidden></div>
+  </div>
+
+  <script>
+    const text = (value) => String(value ?? "");
+    const setText = (id, value) => {
+      document.getElementById(id).textContent = text(value);
+    };
+
+    function formatDate(date, options) {
+      return new Intl.DateTimeFormat("es", options).format(date);
+    }
+
+    function renderCalendar(eventDate, birthdayName) {
+      const eventDay = new Date(eventDate.getFullYear(), eventDate.getMonth(), eventDate.getDate());
+      const sunday = new Date(eventDay);
+      sunday.setDate(eventDay.getDate() - eventDay.getDay());
+      const monthLabel = formatDate(eventDay, { month: "long", year: "numeric" });
+      setText("calendar-month", monthLabel.charAt(0).toLocaleUpperCase("es") + monthLabel.slice(1));
+
+      const week = document.getElementById("calendar-week");
+      ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"].forEach((label, index) => {
+        const day = new Date(sunday);
+        day.setDate(sunday.getDate() + index);
+        const cell = document.createElement("div");
+        cell.className = "calendar-day";
+        cell.setAttribute("role", "gridcell");
+        const weekday = document.createElement("span");
+        weekday.className = "weekday";
+        weekday.textContent = label;
+        const number = document.createElement("span");
+        number.className = "day-number";
+        number.textContent = String(day.getDate());
+        cell.append(weekday, number);
+        if (day.getTime() === eventDay.getTime()) {
+          cell.classList.add("selected");
+          cell.setAttribute("aria-label", `${formatDate(day, { weekday: "long", day: "numeric", month: "long" })}, día del evento`);
+          cell.setAttribute("aria-current", "date");
+          const tag = document.createElement("span");
+          tag.className = "selected-tag";
+          tag.textContent = "MIS XV";
+          cell.append(tag);
+        }
+        week.append(cell);
+      });
+      setText("calendar-caption", "");
+      const summary = document.getElementById("calendar-caption");
+      const selectedDate = formatDate(eventDay, { weekday: "long", day: "numeric", month: "long" });
+      summary.append(document.createTextNode(`¡Nos vemos el ${selectedDate}! `));
+      const time = document.createElement("span");
+      time.textContent = `La celebración comienza a las ${formatDate(eventDate, { hour: "numeric", minute: "2-digit" })}. · ${text(birthdayName)}`;
+      summary.append(time);
+    }
+
+    function renderInvitation(data) {
+      const eventDate = new Date(`${data.event.date}T${data.event.time}:00`);
+      if (Number.isNaN(eventDate.getTime())) throw new Error("La fecha o la hora del evento no tienen un formato válido.");
+
+      document.title = `Mis 15 · ${text(data.birthday.name)}`;
+      document.querySelector('meta[name="description"]').content = text(data.birthday.message);
+      setText("invite-eyebrow", data.birthday.eyebrow);
+      setText("invite-title", data.birthday.title);
+      setText("birthday-name", data.birthday.name);
+      setText("birthday-message", data.birthday.message);
+      setText("event-date-label", formatDate(eventDate, { weekday: "long", day: "numeric", month: "long", year: "numeric" }));
+      setText("portrait-label", `${data.birthday.age} años · ${text(data.birthday.name)}`);
+      setText("calendar-intro", data.calendar.message);
+      setText("countdown-intro", data.countdown.message);
+      setText("details-intro", data.reception.intro);
+      setText("reception-details", `${formatDate(eventDate, { weekday: "long", day: "numeric", month: "long", year: "numeric" })} · ${formatDate(eventDate, { hour: "numeric", minute: "2-digit" })}`);
+      document.getElementById("venue-details").innerHTML = `${escapeHTML(data.reception.venue)}<br>${escapeHTML(data.reception.address)}`;
+      document.getElementById("venue-map").href = data.reception.mapUrl;
+      setText("dress-code", data.attire.code);
+      setText("dress-note", data.attire.note);
+      document.getElementById("reserved-colors").replaceChildren(...data.attire.reservedColors.map((color) => {
+        const swatch = document.createElement("span");
+        swatch.className = "swatch";
+        swatch.title = color.name;
+        swatch.style.backgroundColor = color.hex;
+        return swatch;
+      }));
+      setText("parents-message", data.parents.message);
+      setText("mother-name", data.parents.mother);
+      setText("father-name", data.parents.father);
+      setText("gift-message", data.gift.message);
+      setText("rsvp-message", data.rsvp.message);
+      setText("rsvp-deadline", data.rsvp.deadlineMessage);
+      setText("invite-footer", `Hecho con ♥ para celebrar los 15 de ${text(data.birthday.name)}`);
+
+      const photo = document.getElementById("birthday-photo");
+      photo.src = data.birthday.photo.src;
+      photo.alt = data.birthday.photo.alt;
+      const phone = text(data.rsvp.whatsapp).replace(/\D/g, "");
+      const message = encodeURIComponent(data.rsvp.whatsappMessage.replace("{name}", text(data.birthday.name)));
+      document.getElementById("rsvp-link").href = `https://wa.me/${phone}?text=${message}`;
+      renderCalendar(eventDate, data.birthday.name);
+      startCountdown(eventDate);
+      document.body.classList.add("motion-ready");
+      observeSections();
+    }
+
+    function escapeHTML(value) {
+      return text(value).replace(/[&<>"']/g, (character) => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+      })[character]);
+    }
+
+    function startCountdown(eventDate) {
+      const update = () => {
+        const remaining = eventDate.getTime() - Date.now();
+        if (remaining <= 0) {
+          ["days", "hours", "minutes", "seconds"].forEach((unit) => setText(unit, "00"));
+          setText("countdown-note", "¡Llegó el gran día! Nos vemos en la celebración.");
+          return;
+        }
+        const units = {
+          days: Math.floor(remaining / 86400000),
+          hours: Math.floor((remaining / 3600000) % 24),
+          minutes: Math.floor((remaining / 60000) % 60),
+          seconds: Math.floor((remaining / 1000) % 60)
+        };
+        Object.entries(units).forEach(([unit, value]) => setText(unit, String(value).padStart(2, "0")));
+        setText("countdown-note", "Guarda la fecha. ¡Será una noche inolvidable!");
+      };
+      update();
+      window.setInterval(update, 1000);
+    }
+
+    function observeSections() {
+      const elements = document.querySelectorAll(".reveal, .card");
+      if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        elements.forEach((element) => element.classList.add("is-visible"));
+        return;
+      }
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          entry.target.classList.toggle("is-visible", entry.isIntersecting);
+          entry.target.classList.toggle("is-exiting", !entry.isIntersecting);
+        });
+      }, { threshold: 0.12 });
+      elements.forEach((element) => {
+        element.classList.add("reveal");
+        observer.observe(element);
+      });
+    }
+
+    fetch("./invitation.json")
+      .then((response) => {
+        if (!response.ok) throw new Error(`No se pudo cargar invitation.json (HTTP ${response.status}).`);
+        return response.json();
+      })
+      .then(renderInvitation)
+      .catch((error) => {
+        const notice = document.getElementById("config-error");
+        notice.hidden = false;
+        notice.textContent = `No fue posible cargar la invitación. Verifica que invitation.json esté publicado junto a index.html y vuelve a cargar la página. ${error.message}`;
+        console.error(error);
+      });
+  </script>
+</body>
+</html>
